@@ -2,6 +2,12 @@
 
 Image to ASCII text convertor. The `/images` folder contains some test images.
 
+#### before:
+
+<img src="assets/before.jpg" width="500" />
+#### afrer:
+<img src="assets/after.jpg" width="500"/>
+
 ## run:
 
 ```bash
