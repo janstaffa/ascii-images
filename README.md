@@ -5,7 +5,8 @@ Image to ASCII text convertor. The `/images` folder contains some test images.
 #### before:
 
 <img src="assets/before.jpg" width="500" />
-#### afrer:
+
+#### after:
 <img src="assets/after.jpg" width="500"/>
 
 ## run:
