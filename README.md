@@ -13,26 +13,44 @@ Image to ASCII text convertor. The `/images` folder contains some test images.
 ```bash
 # compile
 cargo build
-# run
-./target/debug/ascii-images --in <path to input file> --out <path to output file>
 
-# or
+# example execution
+ascii-images.exe --in images/image1.png --out output.txt
+```
 
-# run directly
-cargo run --in <path to file> --out <path to output file>
+## usage:
 
-# example
-cargo run --in images/image1.png --out output.txt
+```bash
+USAGE:
+    ascii-images.exe [OPTIONS] --in <IN>
+
+OPTIONS:
+        --charset <CHARSET>            The used set of characters for image generation (1 = more
+                                       characters, better detail, less contrast; 2 = less
+                                       characters, worse detail, more contrast) [default: 1]
+        --compression <COMPRESSION>    The ammount of horizontal pixels that get compressed into one
+                                       character of the result (the greater the value, the smaller
+                                       the image) [default: 15]
+    -h, --help                         Print help information
+    -i, --in <IN>                      Path to the input file
+    -o, --out <OUT>                    Path to the output (txt) file. If none specified, the output
+                                       is dumped into stdout. [optional]
 ```
 
 ## characters:
 
-The program uses the "standard" character ramp for grey scale pictures, black -> white i.e.:
+The program offers two charsets for the output image.
+
+1. the longer character ramp (black -> white)
+   - this one creates images with more detail but less contrast
 
 ```
-$@B%8&WM#\*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-\_+~<>i!lI;:,"^`'.
+$@b%8&wm#\*oahkbdpqwmzo0qlcjuyxzcvunxrjft/\|()1{}[]?-\_+~<>i!li;:,"^`'.
 ```
 
-## notice:
+2. the shorter character ramp (black -> white)
+   - this one creates images with less detail but more contrast
 
-The output text files are **massive** (there is one character for every second pixel). Some text editors may limit line lengths and distort the result.
+```
+@%#*+=-:.
+```
